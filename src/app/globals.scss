@@ -26,9 +26,11 @@
   box-sizing: border-box;
 }
 html {
-  width: 70%;
-  margin: 0 auto;
   color-scheme: dark;
+}
+header {
+  width: 100%;
+  margin: 0 auto;
 }
 body {
   background-color: var(--black);

@@ -1,0 +1,27 @@
+.mainContent {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  .title {
+    font-size: 40px;
+    font-weight: 700;
+    animation: colorChange 3s infinite;
+  }
+  @keyframes colorChange {
+    0% {
+      color: rgb(0, 167, 250);
+    }
+    10% {
+      color: rgb(102, 37, 254);
+    }
+    50% {
+      color: rgb(45, 241, 255);
+    }
+    80% {
+      color: rgb(222, 66, 253);
+    }
+    100% {
+      color: blue;
+    }
+  }
+}

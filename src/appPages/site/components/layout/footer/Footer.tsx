@@ -1,8 +1,13 @@
-const Footer = () => {
+import { FC } from "react";
+import scss from "./Footer.module.scss";
+const Footer: FC = () => {
   return (
-    <div>
-      <h1>Footer</h1>
-    </div>
+    <footer className={scss.footer}>
+      <div className={scss.beko}>
+        <p>This project was copied from Bekzattdev&apos;s profile</p>
+        <a href="https://github.com/Bekzattdev">GitHub = Bekzattdev</a>
+      </div>
+    </footer>
   );
 };
 
