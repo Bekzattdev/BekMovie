@@ -1,67 +1,41 @@
 "use client";
-import { useState } from "react";
 import scss from "./Header.module.scss";
 import Link from "next/link";
-import { FaSearch } from "react-icons/fa";
+import logo from "../../../../../assets/logo/logo.ico";
+import Image from "next/image";
+import { links } from "@/constants/links";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
-  const [language, setLanguage] = useState("");
+  const pathname = usePathname();
   return (
-    <header className={scss.header}>
-      <div className={scss.content}>
-        <Link href={"/"}>
-          <h1>TMDB</h1>
-        </Link>
-        <nav>
-          <Link href={"/"}>
-            {language === "en"
-              ? "Home"
-              : language === "ru"
-              ? "Дом"
-              : language === "es"
-              ? "Homes"
-              : "Home"}
-          </Link>
-          <Link href={"/Popular"}>
-            {language === "en"
-              ? "Popular"
-              : language === "ru"
-              ? "Популярные"
-              : language === "es"
-              ? "Populares"
-              : "Popular"}
-          </Link>
-          <Link href={"/TopRated"}>
-            {language === "en"
-              ? "Top Rated"
-              : language === "ru"
-              ? "Топ Рейтинг"
-              : language === "es"
-              ? "Top Rateds"
-              : "Top Rated"}
-          </Link>
-          <Link href={"/Favorite"}>
-            {language === "en"
-              ? "Favorite"
-              : language === "ru"
-              ? "Избранные"
-              : language === "es"
-              ? "favorites"
-              : "Favorite"}
-          </Link>
-        </nav>
-        <div className={scss.search}>
-          <input type="text" placeholder="search ..." />
-          <button>
-            <FaSearch />
-          </button>
-        </div>
-        <div className={scss.language}>
-          <select onChange={(e) => setLanguage(e.target.value)}>
-            <option value="en">EN</option>
-            <option value="ru">РУ</option>
-            <option value="es">ES</option>
-          </select>
+    <header className={scss.Header}>
+      <div className="container">
+        <div className={scss.content}>
+          <div className={scss.logo}>
+            <Link href={"/"}>
+              <Image src={logo} alt="Logo" />
+              <h2>BekMovie</h2>
+            </Link>
+          </div>
+          <nav>
+            <ul>
+              {links.map((item, index) => (
+                <p key={index}>
+                  <Link
+                    className={
+                      pathname === item.href
+                        ? `${scss.link} ${scss.active}`
+                        : `${scss.link}`
+                    }
+                    href={item.href}
+                  >
+                    {item.name}
+                  </Link>
+                </p>
+              ))}
+            </ul>
+          </nav>
         </div>
       </div>
     </header>

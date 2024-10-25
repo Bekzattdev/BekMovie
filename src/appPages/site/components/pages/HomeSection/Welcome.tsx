@@ -5,9 +5,9 @@ import scss from "./Welcome.module.scss";
 const Welcome = () => {
   return (
     <div className={scss.mainContent}>
-      <span className={scss.title}>
+      {/* <span className={scss.title}>
         <TypeWriterText />
-      </span>
+      </span> */}
     </div>
   );
 };

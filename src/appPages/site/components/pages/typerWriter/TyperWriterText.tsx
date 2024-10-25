@@ -3,12 +3,9 @@ import { Typewriter } from "react-simple-typewriter";
 
 export const TypeWriterText: FC = () => {
   const welcome: string[] = [
-    "Welcome to BekoNovies - Enjoy Watching!",
-    "Discover Movie Magic at BekoMovies",
+    "Welcome to BekNovie - Enjoy Watching!",
+    "Discover Movie Magic at BekMovie",
     "Get ready for the journey",
-    "Добро Пожаловать в BekoNovies - Приятного Просмотра!",
-    "Откройте для Себя Чудо в BekoMovies",
-    "Приготовьтесь к Путешествию",
   ];
 
   return (
