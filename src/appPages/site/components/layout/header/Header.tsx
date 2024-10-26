@@ -34,6 +34,15 @@ const Header = () => {
                   </Link>
                 </p>
               ))}
+              <div
+                className={
+                  pathname
+                    ? `${scss.signIn_col} ${scss.active}`
+                    : `${scss.signIn_col}`
+                }
+              >
+                <Link href={"/api/auth/signin"}>Sign In</Link>
+              </div>
             </ul>
           </nav>
         </div>

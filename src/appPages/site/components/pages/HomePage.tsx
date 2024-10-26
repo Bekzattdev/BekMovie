@@ -1,6 +1,6 @@
-import Popular from "./HomeSection/Popular";
-import TopRated from "./HomeSection/TopRated";
-import Trending from "./HomeSection/Trending";
+import Popular from "./HomeSection/popular/Popular";
+import TopRated from "./HomeSection/rated/TopRated";
+import Trending from "./HomeSection/trend/Trending";
 import Welcome from "./HomeSection/Welcome";
 const HomePAge = () => {
   return (
