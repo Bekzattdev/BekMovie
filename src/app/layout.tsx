@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.scss";
-import ReduxProvider from "@/providers/ReduxProvider";
+import { getServerSession } from "next-auth";
+import RootLayoutClient from "./layout.client";
+import SessionProvider from "@/providers/SessionProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -10,15 +12,19 @@ export const metadata: Metadata = {
   description: "Welcome of movies",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const session = await getServerSession();
+
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ReduxProvider>{children}</ReduxProvider>
+        <SessionProvider session={session}>
+          <RootLayoutClient>{children}</RootLayoutClient>
+        </SessionProvider>
       </body>
     </html>
   );

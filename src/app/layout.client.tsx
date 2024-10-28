@@ -1,3 +1,4 @@
+import ReduxProvider from "@/providers/ReduxProvider";
 import { FC, ReactNode } from "react";
 
 interface RootLayoutClientProps {
@@ -5,7 +6,7 @@ interface RootLayoutClientProps {
 }
 
 const RootLayoutClient: FC<RootLayoutClientProps> = ({ children }) => {
-  return <>{children}</>;
+  return <ReduxProvider>{children}</ReduxProvider>;
 };
 
 export default RootLayoutClient;
