@@ -3,6 +3,7 @@ import { useGetUpComingQuery } from "@/redux/api/coming";
 import scss from "./Welcome.module.scss";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import PreLoader from "@/ui/preLoader/PreLoader";
 
 const Welcome = () => {
   const { data } = useGetUpComingQuery();
@@ -23,7 +24,7 @@ const Welcome = () => {
 
   return (
     <section className={scss.Welcome}>
-      {isLoading && <p className={scss.loading}>Loading...</p>}
+      {isLoading && <PreLoader />}
       {backgroundImage && (
         <Image
           className={scss.bgImage}

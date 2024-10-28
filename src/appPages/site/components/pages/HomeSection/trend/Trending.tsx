@@ -4,9 +4,10 @@ import scss from "./Trending.module.scss";
 import { useGetTrendingQuery } from "@/redux/api/trending";
 
 const Trending = () => {
-  const [topRated, setTopRated] = useState("movie");
-  const getTrendQery = useGetTrendingQuery(topRated);
-  console.log(getTrendQery);
+  const [trending, setTrending] = useState("day");
+  const { data, isLoading } = useGetTrendingQuery(trending);
+  console.log(data);
+
   return (
     <section className={scss.Trending}>
       <div className="container">
