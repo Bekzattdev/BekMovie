@@ -34,7 +34,7 @@ const Welcome = () => {
           height={700}
           priority
           loading="eager"
-          onLoadingComplete={() => setIsLoading(false)}
+          onLoad={() => setIsLoading(false)}
         />
       )}
       <div className="container">

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import "keen-slider/keen-slider.min.css";
 import "./globals.scss";
 import { getServerSession } from "next-auth";
 import RootLayoutClient from "./layout.client";

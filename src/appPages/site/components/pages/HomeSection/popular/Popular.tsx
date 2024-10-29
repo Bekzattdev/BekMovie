@@ -5,7 +5,6 @@ import { useGetPopularQuery } from "@/redux/api/popular";
 const Popular = () => {
   const [popular, setPopular] = useState("movie");
   const { data, isLoading } = useGetPopularQuery(popular);
-  console.log(data);
 
   return (
     <section className={scss.Popular}>

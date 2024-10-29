@@ -1,0 +1,27 @@
+.Trending {
+  .content {
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .switcher {
+        .btn {
+          transition: 0.2s;
+          &.active {
+            background: #ff0505;
+          }
+        }
+      }
+    }
+    .bottom {
+      .keenSlider {
+        .slider {
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+}
