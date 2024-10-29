@@ -3,9 +3,11 @@
   top: 0;
   left: 0;
   z-index: 999;
-  padding: 15px 0;
+  padding: 10px 0;
   width: 100%;
-  background: #000;
+  background: #00000039;
+  backdrop-filter: blur(2px);
+
   .content {
     display: flex;
     justify-content: space-between;
@@ -19,7 +21,7 @@
         display: flex;
         gap: 6px;
         align-items: center;
-        color: #8000ff;
+        color: #09ffce;
       }
     }
     nav {
@@ -53,9 +55,6 @@
             letter-spacing: 0%;
             transition: 0.2s;
           }
-          // &:active {
-          //   color: #8000ff;
-          // }
         }
       }
     }

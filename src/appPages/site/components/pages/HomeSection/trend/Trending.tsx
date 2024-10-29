@@ -11,7 +11,7 @@ const Trending = () => {
   return (
     <section className={scss.Trending}>
       <div className="container">
-        <div className={scss.content}>Trending</div>
+        <div className={scss.content}></div>
       </div>
     </section>
   );
