@@ -22,6 +22,7 @@ const Trending = () => {
       spacing: 15,
     },
   });
+
   return (
     <section className={scss.Trending}>
       <div className="container">
