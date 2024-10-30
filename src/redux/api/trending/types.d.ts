@@ -2,6 +2,8 @@ namespace TREND {
   type GetResoponse = {
     page: number;
     results: Array<{
+      name: string;
+      first_air_date: string;
       backdrop_path: string;
       id: number;
       title: string;

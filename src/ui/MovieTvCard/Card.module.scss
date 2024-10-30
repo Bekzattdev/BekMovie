@@ -1,0 +1,45 @@
+.Card {
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  img {
+    width: clamp(103px, 15vw, 220px);
+    height: clamp(150px, 20vw, 330px);
+    border-radius: 8px;
+    @media (max-width: 768px) {
+      width: clamp(113px, 35vw, 220px);
+      height: clamp(150px, 45vw, 330px);
+    }
+  }
+  .rating {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    margin: 4px;
+    border-radius: 50%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(25px, 3vw, 50vw);
+  }
+  h1 {
+    width: clamp(103px, 15vw, 220px);
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: clamp(12px, 4vw, 20px);
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  span {
+    font-size: clamp(12px, 3vw, 18px);
+    color: #808895;
+  }
+}
