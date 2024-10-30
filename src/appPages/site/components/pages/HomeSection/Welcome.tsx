@@ -4,11 +4,15 @@ import scss from "./Welcome.module.scss";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import PreLoader from "@/ui/preLoader/PreLoader";
+import Search from "../SearchSection/Search";
+import { useRouter } from "next/navigation";
 
 const Welcome = () => {
   const { data } = useGetUpComingQuery();
   const [backgroundImage, setBackgroundImage] = useState<string>("");
   const [isLoading, setIsLoading] = useState(true);
+  const [searchValue, setSearchValue] = useState<string>("");
+  const router = useRouter();
 
   const backgroundRandomImage = () => {
     if (data?.results) {
@@ -38,7 +42,24 @@ const Welcome = () => {
         />
       )}
       <div className="container">
-        <div className={scss.content}></div>
+        <div className={scss.content}>
+          <h1>
+            <span className="multiple-text"></span>
+          </h1>
+          <h4>
+            Millions of movies, TV shows and people to discover. Explore now.
+          </h4>
+          <div className={scss.search_movie}>
+            <input
+              onChange={(e) => setSearchValue(e.target.value)}
+              type="text"
+              placeholder="Search for a movie or tv show...."
+            />
+            <button onClick={() => router.push(`/search/${searchValue}`)}>
+              Search
+            </button>
+          </div>
+        </div>
       </div>
     </section>
   );
