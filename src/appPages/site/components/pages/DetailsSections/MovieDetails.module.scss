@@ -1,0 +1,207 @@
+// .BG {
+//   width: 100%;
+//   height: 750px;
+//   position: absolute;
+//   z-index: -1;
+
+//   .bgImage {
+//     left: 0;
+//     top: 0;
+//     opacity: 0.5;
+//     width: 100%;
+//     height: 100%;
+//     object-fit: cover;
+//     object-position: center;
+//   }
+// }
+
+.MovieDetails {
+  padding: 100px 0 50px 0;
+
+  ::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+    opacity: 0.5;
+    height: 100vh;
+    background: linear-gradient(
+      180deg,
+      rgba(4, 21, 45, 0.023) 0%,
+      rgba(4, 21, 45, 0.32) 82%,
+      #04152d 99%
+    );
+  }
+  .bgImage {
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .content {
+    .details {
+      display: flex;
+      align-items: start;
+      justify-content: center;
+      gap: 50px;
+
+      @media (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+      }
+      img {
+        width: 380px;
+        height: 520px;
+        border-radius: 10px;
+        @media (max-width: 768px) {
+          width: 100%;
+          height: auto;
+        }
+      }
+      .details_text {
+        h1 {
+          font-size: 38px;
+        }
+        p {
+          font-size: 22px;
+          color: #818994;
+          padding: 12px 0;
+        }
+        .genres {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          @media (max-width: 768px) {
+            display: flex;
+            flex-wrap: wrap;
+          }
+
+          h5 {
+            padding: 3px 10px;
+            border-radius: 5px;
+            background: #da2f68;
+            font-size: 12px;
+            font-weight: 500;
+          }
+        }
+        .raiting {
+          padding: 30px 0;
+          display: flex;
+          align-items: center;
+          gap: 30px;
+          .circularRating {
+            width: 90px;
+            height: 90px;
+            @media (max-width: 768px) {
+              width: 70px;
+              height: 70px;
+            }
+          }
+          .circular {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            cursor: pointer;
+            &:hover {
+              span {
+                color: #da2f68;
+                transition: 0.5s;
+              }
+              h1 {
+                color: #da2f68;
+                transition: 0.5s;
+              }
+            }
+            span {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 70px;
+              font-weight: 400;
+            }
+            h1 {
+              font-size: 22px;
+            }
+          }
+        }
+        .modalVideo {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: fixed;
+          inset: 0;
+          z-index: 99;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.54);
+          backdrop-filter: blur(4px);
+          .videoPlayer {
+            width: clamp(370px, 65vw, 700px);
+            height: clamp(220px, 48vw, 400px);
+            iframe {
+              border-radius: 10px;
+            }
+          }
+        }
+        h1 {
+          font-size: 24px;
+          font-weight: 400;
+        }
+        h6 {
+          font-size: 16px;
+          font-weight: 400;
+          padding: 15px 0 35px 0;
+        }
+        .status {
+          .statusDay {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            h4 {
+              font-size: 16px;
+            }
+            span {
+              color: #808893;
+              font-weight: 500;
+            }
+          }
+          .linia {
+            width: 100%;
+            height: 0.1px;
+            background: #80889339;
+            margin-top: 20px;
+            margin-bottom: 20px;
+          }
+          .Director {
+            h4 {
+              font-size: 16px;
+            }
+            span {
+              color: #808893;
+              font-weight: 500;
+            }
+          }
+          .Writter {
+            h4 {
+              font-size: 16px;
+            }
+            span {
+              color: #808893;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+  }
+}

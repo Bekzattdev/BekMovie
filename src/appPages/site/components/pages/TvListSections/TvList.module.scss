@@ -1,21 +1,29 @@
-.Search {
+.TvList {
   margin-top: 100px;
   .content {
     .explore {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
       margin-bottom: 30px;
       h1 {
         font-size: 25px;
         font-weight: 400;
       }
     }
+    .sort {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 30px;
+      .select {
+        width: 100%;
+        color: black;
+      }
+    }
     .tv {
       display: flex;
       align-items: center;
       flex-wrap: wrap;
-      gap: 25px 0;
       justify-content: space-around;
     }
   }

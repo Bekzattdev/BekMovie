@@ -1,0 +1,52 @@
+.Creadits {
+  margin-top: 20px;
+
+  .content {
+    h1 {
+      font-size: 25px;
+      margin-bottom: 30px;
+      font-weight: 400;
+    }
+    .cast {
+      display: flex;
+      align-items: start;
+      gap: 20px;
+      overflow-x: scroll;
+      scrollbar-width: none;
+
+      .cast_block {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        flex-direction: column;
+        gap: 20px;
+        img {
+          border-radius: 50%;
+          width: 180px;
+          height: 200px;
+          @media (max-width: 768px) {
+            width: 100px;
+            height: 120px;
+          }
+        }
+        h2 {
+          font-size: 18px;
+          text-align: center;
+          @media (max-width: 768px) {
+            font-size: 14px;
+          }
+        }
+        h5 {
+          text-align: center;
+          margin-top: -15px;
+          font-size: 16px;
+          color: #818994;
+          font-family: 300;
+          @media (max-width: 768px) {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}

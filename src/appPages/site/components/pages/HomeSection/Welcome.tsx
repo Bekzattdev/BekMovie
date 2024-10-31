@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import PreLoader from "@/ui/preLoader/PreLoader";
 import Search from "../SearchSection/Search";
 import { useRouter } from "next/navigation";
+import { TypeWriterText } from "../typerWriter/TyperWriterText";
 
 const Welcome = () => {
   const { data } = useGetUpComingQuery();
@@ -44,7 +45,7 @@ const Welcome = () => {
       <div className="container">
         <div className={scss.content}>
           <h1>
-            <span className="multiple-text"></span>
+            <TypeWriterText />
           </h1>
           <h4>
             Millions of movies, TV shows and people to discover. Explore now.

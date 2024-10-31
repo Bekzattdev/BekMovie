@@ -1,7 +1,4 @@
-import React from "react";
+import TvPage from "@/appPages/site/components/pages/TvPage";
 
-const page = () => {
-  return <div>tw</div>;
-};
-
+const page = () => <TvPage />;
 export default page;

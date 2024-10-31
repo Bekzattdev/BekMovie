@@ -1,7 +1,5 @@
-import React from "react";
+import MoviePage from "@/appPages/site/components/pages/MoviePage";
 
-const page = () => {
-  return <div>movie</div>;
-};
+const page = () => <MoviePage />;
 
 export default page;

@@ -34,7 +34,7 @@
   }
   .content {
     width: 100%;
-    height: clamp(380px, 70vw, 750px);
+    height: clamp(380px, 70vw, 650px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -52,7 +52,8 @@
       letter-spacing: 0%;
 
       color: #fff;
-      text-shadow: 0 0 5px #f0f, 0 0 10px #f0f, 0 0 20px #f0f;
+      text-shadow: 0 0 5px rgb(149, 0, 255), 0 0 10px rgb(81, 0, 255),
+        0 0 20px rgb(13, 0, 255);
     }
     h4 {
       color: rgb(255, 255, 255);
