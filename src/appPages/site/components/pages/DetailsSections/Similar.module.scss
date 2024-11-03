@@ -21,7 +21,7 @@
       }
       .rating {
         position: absolute;
-        top: 0;
+        bottom: 30;
         right: 0;
         margin: 4px;
         border-radius: 50%;
@@ -30,6 +30,11 @@
         align-items: center;
         justify-content: center;
         width: clamp(15px, 3vw, 50vw);
+      }
+      .ganre {
+        position: absolute;
+        bottom: 65;
+        left: 10px;
       }
       h1 {
         width: 100%;

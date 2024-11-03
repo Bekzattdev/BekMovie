@@ -1,5 +1,4 @@
 "use client";
-
 import {
   useGetSimilarMovieQuery,
   useGetSimilarTvQuery,
@@ -9,6 +8,7 @@ import { FC } from "react";
 import dayjs from "dayjs";
 import CircularRating from "@/ui/Raiting/CircularRating";
 import { useParams, useRouter } from "next/navigation";
+import Ganre from "@/ui/Ganre/Ganre";
 
 const Similar: FC = () => {
   const { tvQuery, movieQuery } = useParams();
@@ -42,6 +42,12 @@ const Similar: FC = () => {
               )}
               <div className={scss.rating}>
                 <CircularRating rating={item.vote_average} />
+              </div>
+              <div className={scss.ganre}>
+                <Ganre
+                  ganreId={item.genre_ids}
+                  type={"movie" === "movie" ? "movie" : "tv"}
+                />
               </div>
               <h1>{item.title || item.name}</h1>
               <span>

@@ -49,11 +49,10 @@ const Recommendations: FC = () => {
               <div className={scss.rating}>
                 <CircularRating rating={item.vote_average} />
               </div>
-              <div>
+              <div className={scss.ganre}>
                 <Ganre
                   ganreId={item.genre_ids}
-                  ganreId={item.genre_ids}
-                  // type={ movieRecommendations === "tv" ? "tv" : "movie"}
+                  type={"movie" === "movie" ? "movie" : "tv"}
                 />
               </div>
               <h1>{item.title || item.name}</h1>
