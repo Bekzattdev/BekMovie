@@ -19,8 +19,8 @@ const Ganre: FC<IGanreProps> = ({ ganreId, type }) => {
 
   return (
     <div className={scss.Ganre}>
-      {ganre?.slice(0, 2).map((el, index) => (
-        <h5 key={index}>{el.name}</h5>
+      {ganre?.slice(0, 2).map((el) => (
+        <h5 key={el.id}>{el.name}</h5>
       ))}
     </div>
   );

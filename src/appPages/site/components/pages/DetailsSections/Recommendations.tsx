@@ -1,5 +1,4 @@
 "use client";
-
 import {
   useGetRecommendationsMovieQuery,
   useGetRecommendationsTvQuery,
@@ -9,6 +8,7 @@ import { FC } from "react";
 import dayjs from "dayjs";
 import CircularRating from "@/ui/Raiting/CircularRating";
 import { useParams, useRouter } from "next/navigation";
+import Ganre from "@/ui/Ganre/Ganre";
 
 const Recommendations: FC = () => {
   const { tvQuery, movieQuery } = useParams();
@@ -48,6 +48,13 @@ const Recommendations: FC = () => {
               )}
               <div className={scss.rating}>
                 <CircularRating rating={item.vote_average} />
+              </div>
+              <div>
+                <Ganre
+                  ganreId={item.genre_ids}
+                  ganreId={item.genre_ids}
+                  // type={ movieRecommendations === "tv" ? "tv" : "movie"}
+                />
               </div>
               <h1>{item.title || item.name}</h1>
               <span>

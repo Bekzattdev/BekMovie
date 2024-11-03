@@ -135,6 +135,7 @@ export const TvList = () => {
                 data={item.first_air_date}
                 rating={item.vote_average}
                 index={index}
+                ganreId={item.genre_ids}
                 id={item.id}
                 nameTvMovie="tv"
               />

@@ -6,27 +6,40 @@
   justify-content: center;
   flex-direction: column;
   position: relative;
+
   img {
-    width: clamp(103px, 15vw, 220px);
-    height: clamp(150px, 20vw, 330px);
+    width: clamp(193px, 15vw, 220px);
+    height: clamp(280px, 25vw, 330px);
     border-radius: 8px;
+    object-fit: cover;
     @media (max-width: 768px) {
       width: clamp(113px, 35vw, 220px);
-      height: clamp(150px, 45vw, 330px);
+      height: clamp(280px, 45vw, 330px);
     }
   }
+
   .rating {
     position: absolute;
-    bottom: 40;
+    bottom: 45;
     right: 10px;
-    margin: 4px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 5px;
     border-radius: 50%;
-    background-color: black;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: clamp(25px, 3vw, 50vw);
+    width: clamp(25px, 3vw, 70px);
   }
+
+  .ganre {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    bottom: 75;
+    gap: 5px;
+    left: 20;
+  }
+
   h1 {
     width: clamp(103px, 15vw, 220px);
     display: -webkit-box;
@@ -34,10 +47,12 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: clamp(12px, 4vw, 20px);
-    margin-top: 10px;
+    font-size: clamp(14px, 4vw, 20px); // Небольшое увеличение шрифта
+    margin-top: 15px;
     margin-bottom: 5px;
+    font-weight: bold;
   }
+
   span {
     font-size: clamp(12px, 3vw, 18px);
     color: #808895;

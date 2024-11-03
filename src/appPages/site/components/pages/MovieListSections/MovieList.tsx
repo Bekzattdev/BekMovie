@@ -54,10 +54,6 @@ const MovieList = () => {
       value: "original_title.asc",
       label: "Title (A-Z)",
     },
-    // {
-    //   value: ".asc",
-    //   label: "Title (A-Z)",
-    // },
   ];
 
   const changeGenres = (gen: any) => {
@@ -124,6 +120,12 @@ const MovieList = () => {
             </div>
             <div className={scss.select}>
               <Select
+                styles={{
+                  control: (baseStyles, state) => ({
+                    ...baseStyles,
+                    borderColor: state.isFocused ? "grey" : "red",
+                  }),
+                }}
                 placeholder="Sort By"
                 components={animatedComponents}
                 options={sortOptions}
@@ -135,11 +137,12 @@ const MovieList = () => {
             {!isLoading ? (
               result.map((item, index) => (
                 <Card
+                  key={item.id}
                   title={item.title}
                   img={item.poster_path}
                   data={item.release_date}
                   rating={item.vote_average}
-                  // ganre_ids={item.genre_ids}
+                  ganreId={item.genre_ids}
                   index={index}
                   id={item.id}
                   nameTvMovie="movie"
