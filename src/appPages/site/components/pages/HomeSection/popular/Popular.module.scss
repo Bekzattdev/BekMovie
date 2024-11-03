@@ -39,10 +39,23 @@
             width: 100%;
             height: auto;
             border-radius: 10px;
+            object-position: center;
           }
           .rating {
             position: absolute;
-            bottom: 75;
+            bottom: 40;
+            right: 0;
+            margin: 4px;
+            border-radius: 50%;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: clamp(25px, 3vw, 50vw);
+          }
+          .ratingPop {
+            position: absolute;
+            bottom: 60;
             right: 0;
             margin: 4px;
             border-radius: 50%;
@@ -54,11 +67,16 @@
           }
           .ganre {
             position: fixed;
-            bottom: 105;
+            bottom: 75;
+            left: 10px;
+          }
+          .ganrePop {
+            position: fixed;
+            bottom: 95;
             left: 10px;
           }
           h1 {
-            width: 70%;
+            width: 100%;
             overflow: hidden;
             text-overflow: ellipsis;
             font-size: clamp(11px, 4vw, 18px);

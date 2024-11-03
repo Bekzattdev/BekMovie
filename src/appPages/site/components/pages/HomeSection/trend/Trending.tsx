@@ -7,18 +7,19 @@ import { useRouter } from "next/navigation";
 import CircularRating from "@/ui/Raiting/CircularRating";
 import Ganre from "@/ui/Ganre/Ganre";
 import dayjs from "dayjs";
+import { useHeaderStore } from "@/stores/useHeaderStore";
 
 const Trending = () => {
   const route = useRouter();
   const [trending, setTrending] = useState("day");
   const { data, isLoading } = useGetTrendingQuery(trending);
-  console.log("trending", data);
+  const { isMobile } = useHeaderStore();
 
   const [ref] = useKeenSlider<HTMLDivElement>({
     loop: true,
     mode: "free-snap",
     slides: {
-      perView: 5,
+      perView: isMobile ? 2.8 : 5,
       spacing: 15,
     },
   });

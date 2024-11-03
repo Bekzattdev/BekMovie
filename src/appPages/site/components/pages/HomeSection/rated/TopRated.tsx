@@ -7,17 +7,19 @@ import CircularRating from "@/ui/Raiting/CircularRating";
 import Ganre from "@/ui/Ganre/Ganre";
 import dayjs from "dayjs";
 import { useGetTopRatedQuery } from "@/redux/api/topRated";
+import { useHeaderStore } from "@/stores/useHeaderStore";
 
 const Trending = () => {
   const route = useRouter();
   const [topRated, setTopRated] = useState("movie");
   const { data, isLoading } = useGetTopRatedQuery(topRated);
+  const { isMobile } = useHeaderStore();
 
   const [ref] = useKeenSlider<HTMLDivElement>({
     loop: true,
     mode: "free-snap",
     slides: {
-      perView: 5,
+      perView: isMobile ? 2.8 : 5,
       spacing: 15,
     },
   });

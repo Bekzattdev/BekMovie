@@ -6,6 +6,7 @@ import "react-circular-progressbar/dist/styles.css";
 interface IRatingProps {
   rating: number;
 }
+
 const CircularRating: FC<IRatingProps> = ({ rating }) => {
   const ratingColor = (rating: number): string => {
     let color: string = "";

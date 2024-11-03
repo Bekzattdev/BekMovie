@@ -54,6 +54,10 @@ const MovieList = () => {
       value: "original_title.asc",
       label: "Title (A-Z)",
     },
+    // {
+    //   value: ".asc",
+    //   label: "Title (A-Z)",
+    // },
   ];
 
   const changeGenres = (gen: any) => {
@@ -128,10 +132,6 @@ const MovieList = () => {
             </div>
           </div>
           <div className={scss.tv}>
-            <div className="">
-              {/* \hello */}
-              <MyLoader />
-            </div>
             {!isLoading ? (
               result.map((item, index) => (
                 <Card
@@ -139,6 +139,7 @@ const MovieList = () => {
                   img={item.poster_path}
                   data={item.release_date}
                   rating={item.vote_average}
+                  // ganre_ids={item.genre_ids}
                   index={index}
                   id={item.id}
                   nameTvMovie="movie"

@@ -21,9 +21,10 @@
         flex-direction: column;
         gap: 20px;
         img {
+          object-fit: cover;
           border-radius: 50%;
           width: 180px;
-          height: 200px;
+          height: 260px;
           @media (max-width: 768px) {
             width: 100px;
             height: 120px;

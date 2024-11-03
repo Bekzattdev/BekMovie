@@ -4,7 +4,6 @@ import scss from "./Welcome.module.scss";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import PreLoader from "@/ui/preLoader/PreLoader";
-import Search from "../SearchSection/Search";
 import { useRouter } from "next/navigation";
 import { TypeWriterText } from "../typerWriter/TyperWriterText";
 
