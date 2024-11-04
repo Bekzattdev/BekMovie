@@ -76,17 +76,15 @@ const Popular: FC = () => {
                             popular === "movie"
                               ? `${scss.rating}`
                               : `${scss.ratingPop}`
-                            // scss.rating
                           }
                         >
                           <CircularRating rating={item.vote_average} />
                         </div>
                         <div
                           className={
-                            // popular === "movie"
-                            //   ? `${scss.ganre}`
-                            //   : `${scss.ganrePop}`
-                            scss.ganre
+                            popular === "movie"
+                              ? `${scss.ganre}`
+                              : `${scss.ganrePop}`
                           }
                         >
                           <Ganre

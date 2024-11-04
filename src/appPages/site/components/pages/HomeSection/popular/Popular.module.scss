@@ -47,7 +47,7 @@
             right: 0;
             margin: 4px;
             border-radius: 50%;
-            background-color: black;
+            background-color: rgba(0, 0, 0, 0.7);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -55,11 +55,11 @@
           }
           .ratingPop {
             position: absolute;
-            bottom: 60;
+            bottom: 40;
             right: 0;
             margin: 4px;
             border-radius: 50%;
-            background-color: black;
+            background-color: rgba(0, 0, 0, 0.7);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -71,8 +71,8 @@
             left: 10px;
           }
           .ganrePop {
-            position: fixed;
-            bottom: 95;
+            position: absolute;
+            bottom: 75;
             left: 10px;
           }
           h1 {
