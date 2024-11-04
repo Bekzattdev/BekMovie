@@ -33,8 +33,9 @@ const Search: FC<IMovieTVID> = () => {
                   data={item.first_air_date || item.release_date!}
                   rating={item.vote_average}
                   index={index}
+                  ganreId={item.genre_ids}
                   id={item.id}
-                  nameTvMovie=""
+                  nameTvMovie={"movie" === "movie" ? "movie" : "tv"}
                 />
               </div>
             ))}

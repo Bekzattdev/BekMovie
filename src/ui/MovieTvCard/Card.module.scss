@@ -12,9 +12,13 @@
     height: clamp(280px, 25vw, 330px);
     border-radius: 8px;
     object-fit: cover;
+    transition: all 0.3s;
     @media (max-width: 768px) {
       width: clamp(113px, 35vw, 220px);
       height: clamp(280px, 45vw, 330px);
+    }
+    &:hover {
+      filter: brightness(0.7);
     }
   }
 

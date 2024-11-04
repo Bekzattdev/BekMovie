@@ -18,6 +18,10 @@
         width: clamp(103px, 15vw, 220px);
         height: clamp(150px, 20vw, 330px);
         border-radius: 8px;
+        transition: all 0.3s;
+        &:hover {
+          filter: brightness(0.7);
+        }
       }
       .rating {
         position: absolute;
