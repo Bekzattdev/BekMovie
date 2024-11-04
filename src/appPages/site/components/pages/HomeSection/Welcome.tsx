@@ -21,6 +21,11 @@ const Welcome = () => {
       setBackgroundImage(`https://image.tmdb.org/t/p/original${backdropImage}`);
     }
   };
+  const handleKeyDown = (e: { key: string }) => {
+    if (e.key === "Enter") {
+      router.push(`/search/${searchValue}`);
+    }
+  };
 
   useEffect(() => {
     backgroundRandomImage();
@@ -51,6 +56,7 @@ const Welcome = () => {
           </h4>
           <div className={scss.search_movie}>
             <input
+              onKeyDown={handleKeyDown}
               onChange={(e) => setSearchValue(e.target.value)}
               type="text"
               placeholder="Search for a movie or tv show...."
