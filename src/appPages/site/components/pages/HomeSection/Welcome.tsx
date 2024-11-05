@@ -3,7 +3,6 @@ import { useGetUpComingQuery } from "@/redux/api/coming";
 import scss from "./Welcome.module.scss";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import PreLoader from "@/ui/preLoader/PreLoader";
 import { useRouter } from "next/navigation";
 import { TypeWriterText } from "../typerWriter/TyperWriterText";
 
@@ -21,6 +20,7 @@ const Welcome = () => {
       setBackgroundImage(`https://image.tmdb.org/t/p/original${backdropImage}`);
     }
   };
+
   const handleKeyDown = (e: { key: string }) => {
     if (e.key === "Enter") {
       router.push(`/search/${searchValue}`);
@@ -33,10 +33,10 @@ const Welcome = () => {
 
   return (
     <section className={scss.Welcome}>
-      {isLoading && <PreLoader />}
+      {isLoading && <div className={scss.skeletonBG} />}
       {backgroundImage && (
         <Image
-          className={scss.bgImage}
+          className={`${scss.bgImage} ${isLoading ? scss.hidden : ""}`}
           src={backgroundImage}
           alt="movieImage"
           width={1920}
