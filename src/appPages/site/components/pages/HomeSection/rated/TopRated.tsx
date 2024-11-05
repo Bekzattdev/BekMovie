@@ -8,7 +8,7 @@ import Ganre from "@/ui/Ganre/Ganre";
 import dayjs from "dayjs";
 import { useGetTopRatedQuery } from "@/redux/api/topRated";
 import { useHeaderStore } from "@/stores/useHeaderStore";
-import Scelet from "@/ui/Sceleton/Scelet";
+import Skelet from "@/ui/Skeleton/Skelet";
 
 const Trending = () => {
   const route = useRouter();
@@ -56,7 +56,7 @@ const Trending = () => {
           <div className={scss.bottom}>
             <div className={scss.keenSlider}>
               {isLoading ? (
-                <Scelet />
+                <Skelet />
               ) : (
                 <div ref={ref} className="keen-slider">
                   {data?.results.map((item, index) => (

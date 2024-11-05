@@ -1,5 +1,5 @@
-import scss from "./Scelet.module.scss";
-const Scelet = () => {
+import scss from "./Skelet.module.scss";
+const Skelet = () => {
   return (
     <div className={scss.skeletonContainer}>
       {Array.from({ length: 5 }).map((_, index) => (
@@ -13,4 +13,4 @@ const Scelet = () => {
   );
 };
 
-export default Scelet;
+export default Skelet;

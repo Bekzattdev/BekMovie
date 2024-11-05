@@ -1,6 +1,7 @@
 .skeletonContainer {
   display: flex;
-  gap: 15px;
+  position: relative;
+  overflow: hidden;
 }
 
 .skeletonCard {
@@ -29,4 +30,10 @@
 
 .skeletonSubtext {
   width: 60%;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
 }
