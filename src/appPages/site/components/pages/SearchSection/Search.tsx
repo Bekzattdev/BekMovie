@@ -24,6 +24,7 @@ const Search: FC<IMovieTVID> = () => {
           <div className={scss.tv}>
             {data?.results.map((item, index) => (
               <div
+                key={index}
                 onClick={() => router.push(`/${item.media_type}/${item.id}`)}
                 className={scss.detailsSearch}
               >
