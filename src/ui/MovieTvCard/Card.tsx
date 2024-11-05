@@ -5,7 +5,6 @@ import CircularRating from "../Raiting/CircularRating";
 import dayjs from "dayjs";
 import { useRouter } from "next/navigation";
 import Ganre from "../Ganre/Ganre";
-import Image from "next/image";
 interface ICard {
   title: string;
   img: string;
@@ -29,7 +28,7 @@ const Card: FC<ICard> = ({
   const router = useRouter();
   return (
     <div
-      key={index}
+      key={id}
       onClick={() => {
         router.push(`/${nameTvMovie}/${id}`);
       }}

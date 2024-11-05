@@ -21,8 +21,8 @@ const Similar: FC = () => {
     <div className={scss.Similar}>
       {similar?.results[0] ? <h1>Similar Movies</h1> : null}
       <div className={scss.content}>
-        {similar?.results.map((item, index) => (
-          <div key={index} className="keen-slider__slide">
+        {similar?.results.map((item) => (
+          <div key={item.id} className="keen-slider__slide">
             <div
               onClick={() => {
                 router.push(`/${movieSimilar ? "movie" : "tv"}/${item.id}`);
