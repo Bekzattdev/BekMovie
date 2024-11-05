@@ -7,6 +7,7 @@ import makeAnimated from "react-select/animated";
 import { useGetGanreMovieQuery } from "@/redux/api/ganre";
 import { useEffect, useState } from "react";
 import { useGetTvListQuery } from "@/redux/api/tvList";
+import PreLoader from "@/ui/preLoader/PreLoader";
 
 export const TvList = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -14,7 +15,7 @@ export const TvList = () => {
   const [result, setResult] = useState<any[]>([]);
   const [genres, setGenres] = useState<any[]>([]);
   const [sortBy, setSortBy] = useState<string>("");
-  const { data } = useGetTvListQuery({
+  const { data, isLoading } = useGetTvListQuery({
     page: currentPage,
     genres: genres.join(","),
     sort: sortBy,
@@ -128,18 +129,25 @@ export const TvList = () => {
             </div>
           </div>
           <div className={scss.tv}>
-            {result?.map((item, index) => (
-              <Card
-                title={item.name}
-                img={item.poster_path}
-                data={item.first_air_date}
-                rating={item.vote_average}
-                index={index}
-                ganreId={item.genre_ids}
-                id={item.id}
-                nameTvMovie="tv"
-              />
-            ))}
+            {!isLoading ? (
+              result.map((item, index) => (
+                <Card
+                  key={item.id}
+                  title={item.title}
+                  img={item.poster_path}
+                  data={item.release_date}
+                  rating={item.vote_average}
+                  ganreId={item.genre_ids}
+                  index={index}
+                  id={item.id}
+                  nameTvMovie="tv"
+                />
+              ))
+            ) : (
+              <div>
+                <PreLoader />
+              </div>
+            )}
           </div>
         </div>
       </div>

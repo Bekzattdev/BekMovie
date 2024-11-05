@@ -2,11 +2,11 @@
 import Card from "@/ui/MovieTvCard/Card";
 import scss from "./MovieList.module.scss";
 import { useGetMovieListQuery } from "@/redux/api/movieList";
-import MyLoader from "@/ui/MyLoader/MyLoader";
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
 import { useEffect, useState } from "react";
 import { useGetGanreMovieQuery } from "@/redux/api/ganre";
+import PreLoader from "@/ui/preLoader/PreLoader";
 
 const MovieList = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -149,8 +149,8 @@ const MovieList = () => {
                 />
               ))
             ) : (
-              <div className="">
-                <MyLoader />
+              <div>
+                <PreLoader />
               </div>
             )}
           </div>
