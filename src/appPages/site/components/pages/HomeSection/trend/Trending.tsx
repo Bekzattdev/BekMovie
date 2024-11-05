@@ -8,6 +8,7 @@ import CircularRating from "@/ui/Raiting/CircularRating";
 import Ganre from "@/ui/Ganre/Ganre";
 import dayjs from "dayjs";
 import { useHeaderStore } from "@/stores/useHeaderStore";
+import Scelet from "@/ui/Sceleton/Scelet";
 
 const Trending = () => {
   const route = useRouter();
@@ -56,7 +57,7 @@ const Trending = () => {
           <div className={scss.bottom}>
             <div className={scss.keenSlider}>
               {isLoading ? (
-                <h1>isLoading...</h1>
+                <Scelet />
               ) : (
                 <div ref={ref} className="keen-slider">
                   {data?.results.map((item, index) => (

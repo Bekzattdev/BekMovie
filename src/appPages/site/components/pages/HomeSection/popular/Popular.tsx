@@ -8,6 +8,7 @@ import CircularRating from "@/ui/Raiting/CircularRating";
 import Ganre from "@/ui/Ganre/Ganre";
 import dayjs from "dayjs";
 import { useHeaderStore } from "@/stores/useHeaderStore";
+import Scelet from "@/ui/Sceleton/Scelet";
 
 const Popular: FC = () => {
   const [popular, setPopular] = useState("movie");
@@ -56,7 +57,7 @@ const Popular: FC = () => {
           <div className={scss.bottom}>
             <div className={scss.keenSlider}>
               {isLoading ? (
-                <h1>loading...</h1>
+                <Scelet />
               ) : (
                 <div ref={ref} className="keen-slider">
                   {data?.results.map((item, index) => (
