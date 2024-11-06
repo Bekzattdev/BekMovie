@@ -13,12 +13,33 @@ import Image from "next/image";
 import CircularRating from "@/ui/Raiting/CircularRating";
 import dayjs from "dayjs";
 import moment from "moment";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IoCaretForwardCircleOutline } from "react-icons/io5";
 import { useHeaderStore } from "@/stores/useHeaderStore";
+import { MdOutlineFavoriteBorder } from "react-icons/md";
+import axios from "axios";
+import { useSession } from "next-auth/react";
+interface IUser {
+  id: number;
+  name: string;
+  email: string;
+}
+interface IFavorite {
+  movieName: string;
+  poster: string;
+  movieID: number;
+  releaseDate: string;
+  voteAverage: string;
+  mediaType?: string;
+  userId?: number;
+}
 
 const MovieDetails = () => {
   const { movieQuery, tvQuery } = useParams();
+  const { data: session } = useSession();
+  const [myId, setMyId] = useState<IUser[] | null>(null);
+
+  const typeMedia = movieQuery ? "movie" : "tv";
   const { data: movie } = useGetDetailsMovieQuery(+movieQuery);
   const { data: tv } = useGetDetailsTvQuery(+tvQuery);
   const { data: castMovie } = useGetCreditsMovieQuery(+movieQuery);
@@ -38,6 +59,35 @@ const MovieDetails = () => {
   const writterTV = castTv?.crew.filter(
     (item) => item.job === "Writer" || item.job === "Director"
   );
+
+  const getMe = async () => {
+    const { data: res } = await axios.get("/api/auth/me");
+    console.log(res, "User Data");
+    setMyId(res);
+  };
+  const userId = myId?.filter((el) => el.email === session?.user?.email) || [];
+
+  const addToFavorite = async (data: IFavorite) => {
+    try {
+      const newItem: IFavorite = {
+        mediaType: String(typeMedia),
+        userId: userId[0].id,
+        movieID: data.movieID,
+        movieName: data.movieName,
+        poster: data.poster,
+        releaseDate: data.releaseDate,
+        voteAverage: data.releaseDate,
+      };
+      const { data: res } = await axios.post("/api/auth/favorites", newItem);
+      console.log(res, "New item");
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    getMe();
+  }, [session]);
 
   return (
     <>
@@ -105,6 +155,24 @@ const MovieDetails = () => {
                         Number(tv?.vote_average) || Number(movie?.vote_average)
                       }
                     />
+                  </div>
+                  <div className={scss.favor}>
+                    <span
+                      onClick={() =>
+                        addToFavorite({
+                          movieID: movie?.id! || tv?.id!,
+                          movieName: movie?.title! || tv?.name!,
+                          poster: movie?.poster_path! || tv?.poster_path!,
+                          releaseDate:
+                            movie?.release_date! || tv?.first_air_date!,
+                          voteAverage:
+                            String(movie?.vote_average!) ||
+                            String(tv?.vote_average!),
+                        })
+                      }
+                    >
+                      <MdOutlineFavoriteBorder />
+                    </span>
                   </div>
                   <div
                     onClick={() => {
