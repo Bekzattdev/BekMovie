@@ -9,14 +9,68 @@ import { signOut, useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { useHeaderStore } from "@/stores/useHeaderStore";
 import { IoClose, IoMenu } from "react-icons/io5";
+import axios from "axios";
+interface IUser {
+  id?: number;
+  email: string;
+  name: string;
+  posts?: IFavorite[];
+}
 
+interface IFavorite {
+  id: number;
+  movieName: string;
+  poster: string;
+  movieID: number;
+  releaseDate: string;
+  voteAverage: string;
+  mediaType: string;
+  createdAt: string;
+  updatedAt: string;
+  User: IUser;
+}
 const Header = () => {
   const pathname = usePathname();
-  const session = useSession();
+  const { data: session } = useSession();
   const router = useRouter();
   const [openMenu, setOpenMenu] = useState(false);
   const [mobileMenu, setMobileMenu] = useState(false);
   const { isMobile, setIsMobile } = useHeaderStore();
+
+  const createUser = async (data: IUser) => {
+    const { email, name } = data;
+    try {
+      const newUser = {
+        email,
+        name,
+      };
+      const { data: res } = await axios.post("/api/auth/me", newUser);
+      console.log(res, "User auth");
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const getUser = async () => {
+    const { data: res } = await axios("/api/auth/favorites");
+    console.log(res, "User List");
+  };
+
+  useEffect(() => {
+    getUser();
+  }, []);
+
+  useEffect(() => {
+    if (session?.user?.email && session?.user?.name) {
+      const newUser: IUser = {
+        email: session?.user?.email,
+        name: session?.user?.name,
+      };
+      setTimeout(() => {
+        createUser(newUser);
+      }, 2000);
+    }
+  }, [session]);
 
   const changeIsMobile = () => {
     setIsMobile(window.innerWidth <= 768);
@@ -57,11 +111,11 @@ const Header = () => {
                     </Link>
                   </p>
                 ))}
-                {session.data ? (
+                {session ? (
                   <img
                     onClick={() => setOpenMenu(!openMenu)}
                     className={scss.userImage}
-                    src={session.data.user?.image!}
+                    src={session.user?.image!}
                     alt="user"
                   />
                 ) : (
@@ -100,11 +154,11 @@ const Header = () => {
             className={`${scss.mobile} ${mobileMenu ? scss.active : ""}`}
           >
             <div className={scss.mobileLinks}>
-              {session.data ? (
+              {session ? (
                 <img
                   onClick={() => setOpenMenu(!openMenu)}
                   className={scss.userImage}
-                  src={session.data.user?.image!}
+                  src={session.user?.image!}
                   alt="user"
                 />
               ) : (
