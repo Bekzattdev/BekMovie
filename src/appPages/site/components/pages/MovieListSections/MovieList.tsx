@@ -103,17 +103,18 @@ const MovieList = () => {
           <div className={scss.tv}>
             {!isLoading ? (
               result.map((item, index) => (
-                <Card
-                  key={item.id}
-                  title={item.title}
-                  img={item.poster_path}
-                  data={item.release_date}
-                  rating={item.vote_average}
-                  index={index}
-                  ganreId={item.genre_ids}
-                  id={item.id}
-                  nameTvMovie="movie"
-                />
+                <div key={index}>
+                  <Card
+                    title={item.title}
+                    img={item.poster_path}
+                    data={item.release_date}
+                    rating={item.vote_average}
+                    index={index}
+                    ganreId={item.genre_ids}
+                    id={item.id}
+                    nameTvMovie="movie"
+                  />
+                </div>
               ))
             ) : (
               <PreLoader />
