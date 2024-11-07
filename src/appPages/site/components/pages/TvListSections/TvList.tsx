@@ -113,17 +113,18 @@ export const TvList = () => {
           <div className={scss.tv}>
             {!isLoading ? (
               result.map((item, index) => (
-                <Card
-                  key={item.id}
-                  title={item.name}
-                  img={item.poster_path}
-                  data={item.first_air_date}
-                  rating={item.vote_average}
-                  index={index}
-                  ganreId={item.genre_ids}
-                  id={item.id}
-                  nameTvMovie="tv"
-                />
+                <div key={index}>
+                  <Card
+                    title={item.name}
+                    img={item.poster_path}
+                    data={item.first_air_date}
+                    rating={item.vote_average}
+                    index={index}
+                    ganreId={item.genre_ids}
+                    id={item.id}
+                    nameTvMovie="tv"
+                  />
+                </div>
               ))
             ) : (
               <div>
