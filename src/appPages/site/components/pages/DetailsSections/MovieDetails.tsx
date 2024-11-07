@@ -62,7 +62,7 @@ const MovieDetails = () => {
 
   const getMe = async () => {
     const { data: res } = await axios.get("/api/auth/me");
-    console.log(res, "User Data");
+    // console.log(res, "User Data");
     setMyId(res);
   };
   const userId = myId?.filter((el) => el.email === session?.user?.email) || [];
@@ -79,7 +79,7 @@ const MovieDetails = () => {
         voteAverage: data.releaseDate,
       };
       const { data: res } = await axios.post("/api/auth/favorites", newItem);
-      console.log(res, "New item");
+      // console.log(res, "New item");
     } catch (error) {
       console.error(error);
     }

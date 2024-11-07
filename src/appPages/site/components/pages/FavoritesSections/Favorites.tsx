@@ -1,4 +1,5 @@
 "use client";
+import scss from "./Favorites.module.scss";
 import Card from "@/ui/MovieTvCard/Card";
 import axios from "axios";
 import { useSession } from "next-auth/react";
@@ -9,9 +10,10 @@ interface IFavorite {
   poster: string;
   movieID: number;
   releaseDate: string;
-  voteAverage: string;
+  voteAverage: number;
   mediaType?: "tv" | "movie";
   userId?: number;
+  genre_ids: number[];
 }
 
 interface IUser {
@@ -27,7 +29,7 @@ const Favorites = () => {
 
   const getMe = async () => {
     const { data: res } = await axios.get("/api/auth/me");
-    console.log(res, "User Data");
+    // console.log(res, "User Data");
     setMyId(res);
   };
 
@@ -44,27 +46,23 @@ const Favorites = () => {
   const userId = myId?.find((u) => u?.email === session?.user?.email);
   const result = favList?.filter((el) => el?.userId === userId?.id) || [];
   return (
-    <div
-      style={{
-        marginInline: "auto",
-        width: "70%",
-        paddingTop: "100px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        flexWrap: "wrap",
-      }}
-    >
-      {result.map((el, index) => (
-        <div key={index}>
-          <Card
-            img={el.poster}
-            nameTvMovie={el.mediaType}
-            title={el.movieName}
-            rating={+el.voteAverage}
-          />
-        </div>
-      ))}
+    <div className={scss.Favorites}>
+      <div className={scss.content}>
+        {result.map((item, index) => (
+          <div key={index}>
+            <Card
+              img={item.poster}
+              nameTvMovie={item.mediaType === "movie" ? "movie" : "tv"}
+              title={item.movieName}
+              rating={item.voteAverage}
+              data={item.releaseDate}
+              ganreId={item.genre_ids}
+              index={index}
+              id={item.movieID}
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import { useHeaderStore } from "@/stores/useHeaderStore";
 import { IoClose, IoMenu } from "react-icons/io5";
 import axios from "axios";
+
 interface IUser {
   id?: number;
   email: string;
@@ -45,7 +46,7 @@ const Header = () => {
         name,
       };
       const { data: res } = await axios.post("/api/auth/me", newUser);
-      console.log(res, "User auth");
+      // console.log(res, "User auth");
     } catch (error) {
       console.error(error);
     }
@@ -53,7 +54,7 @@ const Header = () => {
 
   const getUser = async () => {
     const { data: res } = await axios("/api/auth/favorites");
-    console.log(res, "User List");
+    // console.log(res, "User List");
   };
 
   useEffect(() => {
