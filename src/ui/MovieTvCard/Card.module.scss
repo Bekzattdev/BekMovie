@@ -10,6 +10,7 @@
   img {
     width: clamp(193px, 15vw, 220px);
     height: clamp(280px, 25vw, 330px);
+
     border-radius: 8px;
     object-fit: cover;
     transition: all 0.3s;
@@ -24,7 +25,7 @@
 
   .rating {
     position: absolute;
-    bottom: 45;
+    bottom: 50;
     right: 10px;
     background-color: rgba(0, 0, 0, 0.7);
     padding: 5px;
@@ -32,7 +33,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: clamp(25px, 3vw, 70px);
+    width: 50px;
   }
 
   .ganre {
@@ -43,7 +44,11 @@
     gap: 5px;
     left: 20;
   }
-
+  @media (max-width: 425px) {
+    .rating {
+      bottom: 40;
+    }
+  }
   h1 {
     width: clamp(103px, 15vw, 220px);
     display: -webkit-box;

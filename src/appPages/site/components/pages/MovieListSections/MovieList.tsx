@@ -46,7 +46,7 @@ const MovieList = () => {
   };
 
   useEffect(() => {
-    setCurrentPage(1);
+    // setCurrentPage(1);
     setResult([]);
   }, [genres, sortBy]);
 
