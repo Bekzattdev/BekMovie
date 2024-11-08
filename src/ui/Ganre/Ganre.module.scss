@@ -4,15 +4,15 @@
   justify-content: start;
   flex-wrap: wrap;
   gap: 5px;
-  width: clamp(70px, 13vw, 160px);
+  width: 100%;
+  @media (max-width: 900px) {
+    width: 80%;
+  }
   h5 {
     padding: 3px 10px;
     border-radius: 5px;
     background: #da2f68;
     font-size: clamp(8px, 1vw, 12px);
     font-weight: 500;
-    @media (max-width: 768px) {
-      display: none;
-    }
   }
 }

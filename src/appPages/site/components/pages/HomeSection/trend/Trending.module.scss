@@ -50,12 +50,18 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: clamp(25px, 3vw, 50vw);
+            width: 50px;
           }
           .ganre {
             position: fixed;
             bottom: 75;
             left: 10px;
+          }
+          @media (max-width: 1000px) {
+            .rating {
+              width: 40px;
+              bottom: 45;
+            }
           }
           h1 {
             width: 100%;
