@@ -1,3 +1,4 @@
+// src/components/Favorites.tsx
 "use client";
 import scss from "./Favorites.module.scss";
 import Card from "@/ui/MovieTvCard/Card";
@@ -29,13 +30,23 @@ const Favorites = () => {
 
   const getMe = async () => {
     const { data: res } = await axios.get("/api/auth/me");
-    // console.log(res, "User Data");
     setMyId(res);
   };
 
   const getFavlist = async () => {
     const { data: res } = await axios.get("/api/auth/favorites");
     setFavList(res);
+  };
+
+  const deleteFavorite = async (movieID: number) => {
+    try {
+      await axios.delete("/api/auth/favorites", {
+        data: { movieID, userId: userId?.id },
+      });
+      setFavList((prev) => prev.filter((fav) => fav.movieID !== movieID));
+    } catch (error) {
+      console.error("Failed to delete favorite:", error);
+    }
   };
 
   useEffect(() => {
@@ -45,6 +56,7 @@ const Favorites = () => {
 
   const userId = myId?.find((u) => u?.email === session?.user?.email);
   const result = favList?.filter((el) => el?.userId === userId?.id) || [];
+
   return (
     <div className={scss.Favorites}>
       <div className={scss.content}>
@@ -60,6 +72,9 @@ const Favorites = () => {
               index={index}
               id={item.movieID}
             />
+            <button onClick={() => deleteFavorite(item.movieID)}>
+              Удалить из избранного
+            </button>
           </div>
         ))}
       </div>

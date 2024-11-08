@@ -43,3 +43,23 @@ export const POST = async (request: Request) => {
     return NextResponse.json({ error: "Failed to create favorite" });
   }
 };
+
+export const DELETE = async (request: Request) => {
+  const { movieID, userId } = await request.json();
+
+  try {
+    const deletedFavorite = await prisma.favorite.deleteMany({
+      where: {
+        movieID,
+        userId,
+      },
+    });
+    return NextResponse.json({
+      message: "Favorite deleted successfully",
+      deletedFavorite,
+    });
+  } catch (error) {
+    console.error(error);
+    return NextResponse.json({ error: "Failed to delete favorite" });
+  }
+};
