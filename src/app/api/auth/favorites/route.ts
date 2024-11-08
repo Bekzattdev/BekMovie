@@ -23,6 +23,7 @@ export const POST = async (request: Request) => {
     voteAverage,
     mediaType,
     userId,
+    genres,
   } = body;
 
   try {
@@ -35,6 +36,7 @@ export const POST = async (request: Request) => {
         voteAverage: String(voteAverage),
         mediaType,
         userId,
+        genres,
       },
     });
     return NextResponse.json(data);
