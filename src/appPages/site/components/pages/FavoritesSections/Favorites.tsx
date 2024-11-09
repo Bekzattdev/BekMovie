@@ -59,24 +59,31 @@ const Favorites = () => {
 
   return (
     <div className={scss.Favorites}>
-      <div className={scss.content}>
-        {result.map((item, index) => (
-          <div key={index}>
-            <Card
-              img={item.poster}
-              nameTvMovie={item.mediaType === "movie" ? "movie" : "tv"}
-              title={item.movieName}
-              rating={item.voteAverage}
-              data={item.releaseDate}
-              index={index}
-              id={item.movieID}
-              ganreId={item.genres}
-            />
-            <button onClick={() => deleteFavorite(item.movieID)}>
-              Удалить из избранного
-            </button>
+      <div className="container">
+        <div className={scss.content}>
+          <div className={scss.explore}>
+            <h1>Explore Favorites</h1>
           </div>
-        ))}
+          <div className={scss.tv}>
+            {result.map((item, index) => (
+              <div key={index}>
+                <Card
+                  img={item.poster}
+                  nameTvMovie={item.mediaType === "movie" ? "movie" : "tv"}
+                  title={item.movieName}
+                  rating={item.voteAverage}
+                  data={item.releaseDate}
+                  index={index}
+                  id={item.movieID}
+                  ganreId={item.genres}
+                />
+                <button onClick={() => deleteFavorite(item.movieID)}>
+                  Remove from favorites
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
