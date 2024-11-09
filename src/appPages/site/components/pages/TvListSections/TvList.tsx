@@ -9,7 +9,7 @@ import { useGetTvListQuery } from "@/redux/api/tvList";
 import PreLoader from "@/ui/preLoader/PreLoader";
 
 export const TvList = () => {
-  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [currentPage, setCurrentPage] = useState<number>(9);
   const { data: genre } = useGetGanreMovieQuery();
   const [result, setResult] = useState<any[]>([]);
   const [genres, setGenres] = useState<any[]>([]);
@@ -44,7 +44,7 @@ export const TvList = () => {
   };
 
   useEffect(() => {
-    setCurrentPage(1);
+    setCurrentPage(5);
     setResult([]);
   }, [genres, sortBy]);
 

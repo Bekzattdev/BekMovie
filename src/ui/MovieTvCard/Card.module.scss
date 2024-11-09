@@ -1,22 +1,22 @@
 .Card {
-  padding: 10px;
+  padding: 10px 0;
   cursor: pointer;
   display: flex;
   align-items: start;
   justify-content: center;
   flex-direction: column;
   position: relative;
+  margin: 0 auto;
 
   img {
-    width: clamp(193px, 15vw, 220px);
-    height: clamp(280px, 25vw, 330px);
-
+    width: clamp(198px, 15vw, 220px);
+    height: auto;
     border-radius: 8px;
     object-fit: cover;
     transition: all 0.3s;
     @media (max-width: 768px) {
       width: clamp(113px, 35vw, 220px);
-      height: clamp(280px, 45vw, 330px);
+      height: auto;
     }
     &:hover {
       filter: brightness(0.7);
