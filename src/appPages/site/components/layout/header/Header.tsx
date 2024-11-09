@@ -140,11 +140,9 @@ const Header = () => {
           {openMenu && (
             <div className={scss.openMenu}>
               <button
-                onClick={() =>
-                  signOut({
-                    callbackUrl: "/",
-                  })
-                }
+                onClick={() => ({
+                  callbackUrl: "/",
+                })}
               >
                 Sign Out
               </button>
@@ -172,6 +170,7 @@ const Header = () => {
               )}
               <Link href="/explore/movie">Movie</Link>
               <Link href="/explore/tv">TV Shows</Link>
+              <Link href="/explore/favorites">Favorites</Link>
             </div>
           </div>
         </div>
