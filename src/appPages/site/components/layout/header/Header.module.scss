@@ -7,9 +7,7 @@
   padding: 10px 0;
   backdrop-filter: blur(5px);
   transition: 0.4s;
-
   background: #00000027;
-
   .content {
     display: flex;
     justify-content: space-between;
@@ -72,14 +70,12 @@
     }
 
     .openMenu {
-      position: fixed;
-      top: 50px;
-      right: 80px;
-      background-color: rgba(66, 64, 66, 0.9);
-      padding: 10px;
+      position: absolute;
+      top: 100%;
+      right: 10%;
+      background-color: rgba(21, 0, 96, 0.9);
       border-radius: 10px;
-      z-index: 1000;
-
+      width: 50px;
       button {
         width: 100%;
         padding: 10px;
@@ -96,35 +92,39 @@
 
     .mobile {
       display: none;
-
       &.active {
+        width: 100%;
         display: block;
         position: fixed;
         top: 56px;
         left: 0;
-        width: 100%;
-        // background-color: #04152d;
+        background-color: #04152d;
         backdrop-filter: blur(15px);
         transition: 0.4s;
-        background: #53097d;
         padding: 20px 0;
         z-index: 999;
 
         .mobileLinks {
           display: flex;
+          align-items: end;
           flex-direction: column;
-          align-items: center;
+          width: 100%;
+
           .userImage {
-            width: 30px;
+            width: 40px;
             border-radius: 50%;
+            margin: 0 10%;
             cursor: pointer;
+            text-align: end;
+            top: 0;
           }
           a {
+            width: 100%;
+            text-align: end;
             color: #fff;
             font-size: 24px;
-            padding: 10px 20px;
-            transition: color 0.3s;
-
+            padding: 10px 10%;
+            transition: 0.3s;
             &:hover {
               color: #9336fd;
             }
