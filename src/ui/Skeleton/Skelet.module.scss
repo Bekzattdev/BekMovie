@@ -17,6 +17,9 @@
   background-color: #0a2955;
   border-radius: 10px;
   margin-bottom: 10px;
+  @media (max-width: 728px) {
+    height: 170px;
+  }
 }
 
 .skeletonText,
