@@ -1,5 +1,5 @@
 .Card {
-  padding: 10px 0;
+  padding: 15px 0;
   cursor: pointer;
   display: flex;
   align-items: start;
@@ -40,13 +40,17 @@
     position: absolute;
     display: flex;
     flex-wrap: wrap;
-    bottom: 75;
+    bottom: 85;
     gap: 5px;
     left: 20;
   }
   @media (max-width: 425px) {
     .rating {
       bottom: 40;
+    }
+    .ganre {
+      bottom: 65;
+      left: 5;
     }
   }
   h1 {
