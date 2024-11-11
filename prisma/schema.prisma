@@ -27,5 +27,4 @@ model Favorite {
   updatedAt   DateTime @updatedAt
   userId      Int
   user        User     @relation(fields: [userId], references: [id])
-  genres      Int[]
 }

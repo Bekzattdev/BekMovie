@@ -14,7 +14,6 @@ interface IFavorite {
   voteAverage: number;
   mediaType?: "tv" | "movie";
   userId?: number;
-  genres: number[];
 }
 
 interface IUser {
@@ -75,7 +74,7 @@ const Favorites = () => {
                   data={item.releaseDate}
                   index={index}
                   id={item.movieID}
-                  ganreId={item.genres}
+                  ganreId={[]}
                 />
                 <button onClick={() => deleteFavorite(item.movieID)}>
                   Remove from favorites

@@ -76,7 +76,7 @@ const MovieDetails = () => {
         movieName: data.movieName,
         poster: data.poster,
         releaseDate: data.releaseDate,
-        voteAverage: data.releaseDate,
+        voteAverage: data.voteAverage,
       };
       const { data: res } = await axios.post("/api/auth/favorites", newItem);
       // console.log(res, "New item");

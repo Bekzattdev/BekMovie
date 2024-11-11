@@ -23,7 +23,6 @@ export const POST = async (request: Request) => {
     voteAverage,
     mediaType,
     userId,
-    genres,
   } = body;
 
   try {
@@ -33,10 +32,9 @@ export const POST = async (request: Request) => {
         poster,
         movieID,
         releaseDate,
-        voteAverage: String(voteAverage),
+        voteAverage: voteAverage,
         mediaType,
         userId,
-        genres,
       },
     });
     return NextResponse.json(data);
