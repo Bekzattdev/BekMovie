@@ -30,7 +30,7 @@ const Popular: FC = () => {
       <div className="container">
         <div className={scss.content}>
           <div className={scss.top}>
-            <h1>What's Popular</h1>
+            <h1>What&apos;s Popular</h1>
             <div className={scss.switcher}>
               <button
                 onClick={() => setPopular("movie")}
