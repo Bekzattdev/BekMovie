@@ -25,7 +25,11 @@
           cursor: pointer;
           transition: 0.5s;
           &.active {
-            background: #052859;
+            background: linear-gradient(
+              110.07deg,
+              rgb(4, 135, 140) 0.99%,
+              rgb(81, 2, 130) 100%
+            );
             color: white;
           }
         }
