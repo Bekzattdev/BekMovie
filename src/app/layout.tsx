@@ -10,7 +10,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "BekMovie",
-  description: "Welcome of movies",
+  description:
+    "BekMovie - is a unique website that offers fascinating information about movies and TV series.",
 };
 
 export default async function RootLayout({
