@@ -21,7 +21,13 @@
       }
 
       h2 {
-        color: #09ffce;
+        background: linear-gradient(
+          110.07deg,
+          rgb(255, 10, 206) 0.99%,
+          rgb(40, 2, 255) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
     }
 
