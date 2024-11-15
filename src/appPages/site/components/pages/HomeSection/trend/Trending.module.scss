@@ -46,7 +46,7 @@
           }
           .rating {
             position: absolute;
-            bottom: 40;
+            bottom: 40px;
             right: 0;
             margin: 4px;
             border-radius: 50%;
@@ -55,16 +55,18 @@
             align-items: center;
             justify-content: center;
             width: 50px;
+            z-index: 10;
           }
           .ganre {
-            position: fixed;
-            bottom: 75;
+            position: absolute;
+            bottom: 75px;
             left: 10px;
+            z-index: 9;
           }
           @media (max-width: 1000px) {
             .rating {
               width: 40px;
-              bottom: 45;
+              bottom: 45px;
             }
           }
           h1 {

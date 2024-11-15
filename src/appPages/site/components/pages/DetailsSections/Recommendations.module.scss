@@ -25,8 +25,8 @@
       }
       .rating {
         position: absolute;
-        bottom: 40;
-        right: 0;
+        bottom: 40px;
+        right: 0px;
         margin: 4px;
         border-radius: 50%;
         background-color: rgba(0, 0, 0, 0.7);
@@ -34,11 +34,13 @@
         align-items: center;
         justify-content: center;
         width: 50px;
+        z-index: 10;
       }
       .ganre {
         position: absolute;
-        bottom: 65;
+        bottom: 65px;
         left: 10px;
+        z-index: 9;
       }
       @media (max-width: 768px) {
         .rating {
