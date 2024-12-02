@@ -3,9 +3,9 @@ import { Typewriter } from "react-simple-typewriter";
 
 export const TypeWriterText: FC = () => {
   const welcome: string[] = [
-    "Welcome to BekNovie - Enjoy Watching!",
+    "Welcome to BekMovie - Enjoy Watching!",
     "Discover Movie Magic at BekMovie",
-    "Get ready for the journey",
+    "Get Ready for the Journey",
   ];
 
   return (
@@ -14,7 +14,7 @@ export const TypeWriterText: FC = () => {
         words={welcome}
         loop={true}
         cursor={true}
-        cursorStyle="|"
+        cursorStyle="📍"
         typeSpeed={80}
         deleteSpeed={10}
         delaySpeed={2700}
